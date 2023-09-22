@@ -1,0 +1,112 @@
+* {
+  border: none;
+  font-family: 'Fira Code Nerd Font', 'Ubuntu Nerd Font';
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  margin-top: 1px;
+  }
+
+window#waybar {
+  background: transparent;
+}
+
+#custom-arch
+{
+background-color: #11111b;
+font-size: 14px;
+border-radius: 10px;
+padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 2px;
+  background: #11111b;
+  color: #b4befe;
+  margin-left: 4px;
+  margin-right: 4px;
+
+}
+
+#workspaces {
+  background-color: #11111b;
+ border-radius: 10px;
+padding-left: 10px;
+  padding-right: 10px;
+padding-top: 2px;
+
+  background: #11111b;
+  color: #b4befe;
+  margin-left: 4px;
+  margin-right: 4px;
+
+}
+
+
+#workspaces button {
+
+  background: #11111b;
+  color: #b4befe;
+}
+
+#clock{
+ border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 2px;
+
+}
+
+
+#backlight{
+ border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+ margin-left: 4px;
+  margin-right: 4px; 
+padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 2px;
+
+}
+
+
+#pulseaudio
+{
+ border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-right: 4px; 
+padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 2px;
+}
+ #network
+ {
+ border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+ margin-left: 4px;
+  margin-right: 4px; 
+padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 2px;
+ }
+
+ #battery{
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-left: 4px;
+  margin-right: 4px; 
+padding-left: 10px;
+  padding-right: 10px;
+
+
+  padding-top: 2px;
+}
+
+
