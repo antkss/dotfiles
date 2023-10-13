@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -26,7 +26,7 @@ exec /usr/lib/xdg-desktop-portal-hyprland
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.images/wallpaper-5.jpg fill
+output * bg ~/.images/ori.jpg fill
 input "1:1:AT_Translated_Set_2_keyboard" {
     repeat_rate 30
     repeat_delay 250
@@ -48,8 +48,10 @@ gaps inner 4
 gaps outer 0
 
 # Hide titlebar on windows:
-default_border pixel 5
+default_border pixel 3
 client.focused          #5C8286 #5C8286 #ffffff #2e9ef4   #8fbcbb
+
+exec export XDG_CURRENT_DESKTOP=sway
 
 # Default Font
 # font pango:Noto Sans Regular 10

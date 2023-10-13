@@ -1,7 +1,7 @@
 {
   "layer": "top",
     "modules-left": ["custom/arch", "sway/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/kooha"],
     "modules-right": ["backlight", "pulseaudio",  "network", "battery"],
     "custom/arch": {
       "format": "  ",
@@ -51,5 +51,10 @@
       "format-icons": ["", "", "", "", "", "", "", "", "", ""],
       "format-charging": "<span color='#b4befe'></span> {capacity}%",
       "tooltip": false,
+    },
+      "custom/kooha": {
+      "format": "🖵",
+      "tooltip": false,
+      "on-click": "exec /usr/bin/kooha"
     },
 }
