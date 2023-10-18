@@ -37,7 +37,8 @@ exec --no-startup-id export XMODIFIERS=@im=ibus
 exec --no-startup-id export QT4_IM_MODULE=ibus
 exec --no-startup-id export CLUTTER_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon -drx
-
+#add clipboard manager
+exec wl-paste -t text --watch clipman store --max-items=9999999999 --histpath="~/.local/share/clipman.json" --primary
 #
 # Example configuration:
 #
@@ -75,7 +76,7 @@ font pango: Ubuntu Nerd Font 10
 #
 # Example configuration:
 #
-   input "2:14:SynPS/2_Synaptics_TouchPad" {
+   input "2:7:SynPS/2_Synaptics_TouchPad" {
        dwt enabled
        tap enabled
        natural_scroll enabled
