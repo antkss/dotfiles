@@ -1,1 +1,0 @@
-coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd filter=lfs diff=lfs merge=lfs -text
