@@ -106,7 +106,6 @@ inputbar {
     text-color:                  @foreground-colour;
     children:                    [ "textbox-prompt-colon", "entry", "mode-switcher" ];
 }
-
 prompt {
     enabled:                     true;
     background-color:            inherit;
