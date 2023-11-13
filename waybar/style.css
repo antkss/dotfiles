@@ -33,7 +33,27 @@ padding-left: 10px;
   margin-right: 5px;
 
 }
+#workspaces button:hover {
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 15px;
+    opacity:0.9;
+}
 
+#taskbar {
+
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-left: 5px;
+  margin-right: 5px; 
+padding-left: 5px;
+  padding-right: 5px;
+
+
+  padding-top: 2px;
+
+}
 #workspaces {
   background-color: #11111b;
  border-radius: 10px;
@@ -52,6 +72,15 @@ padding-top: 2px;
 
   background: #11111b;
   color: #b4befe;
+   transition: all 0.2s ease-in-out;
+}
+#workspaces button.active {
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 15px;
+    /*min-width: 40px;*/
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
 }
 
 #clock{
