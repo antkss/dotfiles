@@ -11,7 +11,7 @@
  "hyprland/workspaces": {
       "format": "{name}",
       "format": "{icon}",
-      "tooltip": false,
+      "tooltip": true,
       "all-outputs": true,
       "format-icons": {
       "1": "",
@@ -28,7 +28,7 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 14,
+        "icon-size": 15,
         "tooltip-format": "{title}",
         "on-click-middle": "close",
 	"on-click": "activate",
