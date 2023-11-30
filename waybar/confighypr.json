@@ -70,6 +70,7 @@
     },
     "network": {
       "interface": "wlo1",
+      "interface": "wlan0",
       "format": "{ifname}",
       "format-wifi": "<span color='#b4befe'> </span>{essid}",
       "format-ethernet": "{ipaddr}/{cidr} ",
@@ -83,8 +84,8 @@
       "tooltip": false
     },
       "custom/kooha": {
-      "format": "🖵",
+      "format": "<span color='#b4befe'> </span>{icon}",
       "tooltip": false,
-      "on-click": "exec /usr/bin/kooha"
+      "on-click": "exec /bin/clipman restore"
     }
 }
