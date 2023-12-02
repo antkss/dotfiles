@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -40,6 +40,7 @@ exec --no-startup-id export CLUTTER_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon -drx
 #add clipboard manager
 exec wl-paste -t text --watch clipman store --max-items=9999999999 --histpath="~/.local/share/clipman.json" --primary
+exec wl-paste -pw clipman restore
 #
 # Example configuration:
 #

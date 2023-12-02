@@ -101,6 +101,8 @@ if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				i3-msg exit
 		elif [[ "$DESKTOP_SESSION" == 'sway' ]]; then
 			swaymsg exit
+elif [[ "$XDG_SESSION_DESKTOP" == 'sway' ]]; then
+			swaymsg exit
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
 			hyprctl dispatch exit
 fi 
