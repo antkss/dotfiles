@@ -1,36 +1,60 @@
 {
   "layer": "top",
     "modules-left": ["custom/arch", "sway/workspaces"],
-    "modules-center": ["clock", "custom/kooha"],
+    "modules-center": ["clock", "custom/kooha","wlr/taskbar"],
     "modules-right": ["backlight", "pulseaudio",  "network", "battery"],
     "custom/arch": {
       "format": "  ",
-      "tooltip": false,
+      "tooltip": true,
       "on-click": "sh /home/as/.bin/bin/rofipow"
     },
-    "sway/workspaces": {
+ "sway/workspaces": {
       "format": "{name}",
       "format": "{icon}",
-      "tooltip": false,
+      "tooltip": true,
       "all-outputs": true,
       "format-icons": {
-  		"1": "",
-  		"2": "",
-  		"3": "",
-  		"4": "",
-  		"5": "",
-  		"high-priority-named": [ "1", "2" ],
-  		"urgent": ""
-  	}
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": ""
+      }
     },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 15,
+        "tooltip-format": "{title}",
+        "on-click-middle": "close",
+	"on-click": "activate",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox"
+        },
+	"empty": "true" 
+
+    },
+
     "clock": {
       "format": "<span color='#b4befe'> </span>{:%H:%M}",
+         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+
     },
     "backlight": {
       "device": "intel_backlight",
       "format": "<span color='#b4befe'>{icon}</span> {percent}%",
-      "format-icons": ["󱩔", "󱩏", "󱩏", "󱩑", "󱩑", "󱩑", "󱩔", "󱩕", "󱩖"]
-
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "pulseaudio": {
       "format": "<span color='#b4befe'>{icon}</span> {volume}%",
@@ -46,21 +70,22 @@
     },
     "network": {
       "interface": "wlo1",
+      "interface": "wlan0",
       "format": "{ifname}",
       "format-wifi": "<span color='#b4befe'> </span>{essid}",
       "format-ethernet": "{ipaddr}/{cidr} ",
       "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
-      "tooltip": false,
+      "tooltip": false
     },
     "battery": {
-      "format": "<span color='#b4befe'>{icon}</span> {capacity}%", 
-      "format-icons": ["", "", "", "", "", "", "", "", ""],
+      "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "format-charging": "<span color='#b4befe'></span> {capacity}%",
-      "tooltip": false,
+      "tooltip": false
     },
       "custom/kooha": {
-      "format": "🖵",
+      "format": "<span color='#b4befe'> </span>{icon}",
       "tooltip": false,
-      "on-click": "exec /usr/bin/kooha"
-    },
+      "on-click": "exec /bin/clipman restore"
+    }
 }
