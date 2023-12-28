@@ -1,50 +1,52 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
 [colors.bright]
-black = "#1d1f21"
-blue = "#0d73cc"
-cyan = "#739fcf"
-green = "#4e9a06"
-magenta = "#75507b"
-red = "#ef2929"
-white = "#d3d7cf"
-yellow = "#fce94f"
+black = "0x696969"
+blue = "0x007FFF"
+cyan = "0x00CCCC"
+green = "0x03C03C"
+magenta = "0xFF1493"
+red = "0xFF2400"
+white = "0xFFFAFA"
+yellow = "0xFDFF00"
 
-#[colors.bright.normal]
-#black = "#3f3f3f"
-#blue = "#0d73cc"
-#cyan = "#14ffff"
-#green = "#4e9a06"
-#magenta = "#fd28ff"
-#red = "#cc0000"
-#white = "#ffffff"
-#yellow = "#c4a000"
-
-[colors.dim]
-black = "#131415"
-blue = "#556a7d"
-cyan = "#5b7d78"
-green = "#777c44"
-magenta = "#75617b"
-red = "#864343"
-white = "#828482"
-yellow = "#9e824c"
+[colors.normal]
+black = "0x10100E"
+blue = "0x0087BD"
+cyan = "0x20B2AA"
+green = "0x009F6B"
+magenta = "0x9A4EAE"
+red = "0xC40233"
+white = "0xC6C6C4"
+yellow = "0xFFD700"
 
 [colors.primary]
 background = "#000000"
-foreground = "#f0fdff"
+foreground = "0xcbe3e7"
+
+[env]
+TERM = "xterm-256color"
 
 [font]
-size = 10.0
-
-[font.bold]
-family = "Hack Nerd Font Mono"
-style = "Bold"
+size = 8
 
 [font.normal]
-family = "Hack Nerd Font Mono"
-style = "Regular"
+family = "Hack"
+style = "Bold"
 
 [selection]
 save_to_clipboard = true
 
 [window]
+dynamic_padding = false
+dynamic_title = true
 opacity = 0.8
+
+[window.dimensions]
+columns = 160
+lines = 48
+
+[window.padding]
+x = 2
+y = 2

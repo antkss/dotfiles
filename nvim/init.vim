@@ -1,6 +1,12 @@
 call plug#begin('/home/as/.config/nvim/plugged')
+"NERDTree plugin 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-
+" nerdtree hightlight and icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+" save and restore nerdtree state between sessions
+"Git status flag
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Using a non-default branch
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
@@ -14,10 +20,19 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Vim theme 
 Plug 'morhetz/gruvbox'
-" autocomplete 
-
+"find and replace
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-pack/nvim-spectre'
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"comment plugin
+Plug 'numToStr/Comment.nvim'
+"chatgpt plugin 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+Plug 'dpayne/CodeGPT.nvim'
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -35,6 +50,16 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 " There are also colorschemes for the different styles.
-nmap <F5> <C-D> :NERDTreeToggle<CR>
+" NERDTreeToggle configuration
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap ; :Files<CR>
 
+" NERDTree hightlight configuration
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 set number
+lua require('Comment').setup()
+
