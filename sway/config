@@ -9,19 +9,20 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
+set $swaydir  ~/.config/sway
 set $left h
 set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu /home/as/.bin/bin/rofilau
 exec mako
 exec notify-send "Welcome back!! " 
-exec /lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec /lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec /usr/lib/xdg-desktop-portal-wlr
 #exec waydroid show-full-ui
 ### Output configuration
@@ -39,8 +40,7 @@ exec --no-startup-id export QT4_IM_MODULE=ibus
 exec --no-startup-id export CLUTTER_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon -drx
 #add clipboard manager
-exec wl-paste -t text --watch clipman store --max-items=9999999999 --histpath="~/.local/share/clipman.json" --primary
-exec wl-paste -pw clipman restore
+exec wl-paste -n -t  text --watch clipman store --max-items=9999999999 --histpath="~/.local/share/clipman.json" --primary
 #
 # Example configuration:
 #
@@ -54,7 +54,6 @@ gaps outer 0
 default_border pixel 3
 client.focused          #5C8286 #5C8286 #ffffff #2e9ef4   #8fbcbb
 
-exec export XDG_CURRENT_DESKTOP=sway
 
 # Default Font
 # font pango:Noto Sans Regular 10
@@ -102,11 +101,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term  
 
     # Kill focused window
-    bindsym $mod+q kill
-
+    # bindsym $mod+q kill
+    bindsym $mod+q mark quit; exec $swaydir/scripts/fadeout.sh
     # Start your launcher
     bindsym $mod+d exec $menu
 
@@ -150,16 +149,27 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 #: Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    # bindsym $mod+1 workspace number 1
+    # bindsym $mod+2 workspace number 2
+    # bindsym $mod+3 workspace number 3
+    # bindsym $mod+4 workspace number 4
+    # bindsym $mod+5 workspace number 5
+    # bindsym $mod+6 workspace number 6
+    # bindsym $mod+7 workspace number 7
+    # bindsym $mod+8 workspace number 8
+    # bindsym $mod+9 workspace number 9
+    # bindsym $mod+0 workspace number 10 
+
+bindsym $mod+1 exec $swaydir/scripts/workspacefade.sh 1
+bindsym $mod+2 exec $swaydir/scripts/workspacefade.sh 2
+bindsym $mod+3 exec $swaydir/scripts/workspacefade.sh 3
+bindsym $mod+4 exec $swaydir/scripts/workspacefade.sh 4
+bindsym $mod+5 exec $swaydir/scripts/workspacefade.sh 5
+bindsym $mod+6 exec $swaydir/scripts/workspacefade.sh 6
+bindsym $mod+7 exec $swaydir/scripts/workspacefade.sh 7
+bindsym $mod+8 exec $swaydir/scripts/workspacefade.sh 8
+bindsym $mod+9 exec $swaydir/scripts/workspacefade.sh 9
+bindsym $mod+0 exec $swaydir/scripts/workspacefade.sh 0
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -235,7 +245,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 #config windows 
-for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 pptt
+for_window [app_id=.*] opacity 0
+for_window [app_id=.*] exec $swaydir/scripts/fadein.sh                        
+for_window [app_id=.*] mark fade
+
+
 
 include /home/as/.config/sway/con.d/*
 #

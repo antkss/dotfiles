@@ -10,7 +10,7 @@ FRAME_T = float(getenv("SWAYFADER_FRAME_T", 0.01))
 
 # transparency values
 CON_AC     = float(getenv("SWAYFADER_CON_AC", 1))        # active window
-CON_INAC   = float(getenv("SWAYFADER_CON_INAC", 0.7))    # inactive window
+CON_INAC   = float(getenv("SWAYFADER_CON_INAC", 1))    # inactive window
 FLOAT_AC   = float(getenv("SWAYFADER_FLOAT_AC", 1))      # active floating window
 FLOAT_INAC = float(getenv("SWAYFADER_FLOAT_INAC", 0.95)) # inactive floating window
 BOT_INAC   = float(getenv("SWAYFADER_BOT_INAC", 0.9))    # bottom window
