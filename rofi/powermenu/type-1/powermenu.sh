@@ -16,9 +16,9 @@ SCREEN_POS=$(swaymsg -t get_outputs \
 	'.[] | select(.focused).rect | "\(.width)x\(.height)\\+\(.x)\\+\(.y)"')
 
 # ripgrep
-XWAYLAND_OUTPUT=$(xrandr | rg -oP "[A-Z]+[0-9]+(?= [a-z]+ $SCREEN_POS)")
+XWAYLAND_OUTPUT=$(xrandr)
 
-MONITOR_ID=$(rofi --help | rg $XWAYLAND_OUTPUT -B1 \
+MONITOR_ID=$(rofi --help  \
 	| sed -sr '/ID/!d;s/[^:]*:\s([0-9])/\1/')
 
 # GNU grep
@@ -105,6 +105,9 @@ elif [[ "$XDG_SESSION_DESKTOP" == 'sway' ]]; then
 			swaymsg exit
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
 			hyprctl dispatch exit
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'wayfire' ]]; then
+		killall wayfire	
+
 fi 
 			fi
 		fi
@@ -120,7 +123,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-        swaylock 
+        ~/.bin/bin/swaylockset 
         ;;
     $suspend)
 		run_cmd --suspend

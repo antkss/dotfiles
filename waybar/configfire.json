@@ -1,14 +1,14 @@
 {
   "layer": "top",
-    "modules-left": ["custom/arch", "sway/workspaces"],
-    "modules-center": ["clock", "custom/kooha","wlr/taskbar"],
+    "modules-left": ["custom/arch" ],
+    "modules-center": ["clock", "custom/kooha"],
     "modules-right": ["backlight", "pulseaudio",  "network", "battery"],
     "custom/arch": {
       "format": "  ",
       "tooltip": true,
       "on-click": "sh /home/as/.bin/bin/rofipow"
     },
- "sway/workspaces": {
+ "wayfire/workspaces": {
       "format": "{name}",
       "format": "{icon}",
       "tooltip": true,

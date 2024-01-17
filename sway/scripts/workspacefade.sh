@@ -13,20 +13,24 @@ oldworkspacenumber=${oldworkspace%%:*}
 
 # Face out all windows in the current workspace
 for i in `seq 20`; do
-    swaymsg "[workspace=__focused__]" opacity minus 0.07
-    sleep 0.006
+    swaymsg "[workspace=__focused__]" opacity minus 0.5 
+    sleep 0.001
 done
 
 # make all the windows in target workspace invisible
-swaymsg "[workspace=$number]" opacity 0
+swaymsg "[workspace=$number]" opacity 1
 # and go there
 swaymsg workspace "$name"
 
 # With his line in place we can switch back the workspace to visible in case we move there differently (EG using swaybar)
-swaymsg "[workspace=$oldworkspacenumber]" opacity 1
+if [ $oldworkspacenumber != $number ]; then
+    swaymsg "[workspace=$oldworkspacenumber]" opacity 0.5
+fi
 
 # Now fade in all the new windows
 for i in `seq 20`; do
-    swaymsg "[workspace=__focused__]" opacity plus 0.07
-    sleep 0.006
+swaymsg "[workspace=__focused__]" opacity plus 0.5
+sleep 0.001
+
+
 done

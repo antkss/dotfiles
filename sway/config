@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty 
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -30,14 +30,9 @@ exec notify-send "Welcome back!! "
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/.images/ori.jpg fill
 input "1:1:AT_Translated_Set_2_keyboard" {
-    repeat_rate 30
-    repeat_delay 250
+    repeat_rate 20
+    repeat_delay 200
 }
-exec --no-startup-id export GTK_IM_MODULE=ibus
-exec --no-startup-id export QT_IM_MODULE=ibus
-exec --no-startup-id export XMODIFIERS=@im=ibus
-exec --no-startup-id export QT4_IM_MODULE=ibus
-exec --no-startup-id export CLUTTER_IM_MODULE=ibus
 exec --no-startup-id ibus-daemon -drx
 #add clipboard manager
 exec wl-paste -n -t  text --watch clipman store --max-items=9999999999 --histpath="~/.local/share/clipman.json" --primary
@@ -105,7 +100,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Kill focused window
     # bindsym $mod+q kill
-    bindsym $mod+q mark quit; exec $swaydir/scripts/fadeout.sh
+    bindsym $mod+q kill  
     # Start your launcher
     bindsym $mod+d exec $menu
 
@@ -245,10 +240,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 #config windows 
-for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 pptt
-for_window [app_id=.*] opacity 0
-for_window [app_id=.*] exec $swaydir/scripts/fadein.sh                        
-for_window [app_id=.*] mark fade
+ for_window [app_id="pavucontrol"] {
+	floating enable;
+	move position 815 0;
+    resize set 350 200
+    }
+ # for_window [app_id=.*] opacity 0
+# for_window [app_id=.*] exec $swaydir/scripts/fadein.sh                        
+# for_window [app_id=.*] mark fade
+
 
 
 
