@@ -45,7 +45,7 @@ opacity = 0.8
 
 [window.dimensions]
 columns = 180
-lines = 50
+lines = 180
 
 [window.padding]
 x = 0
