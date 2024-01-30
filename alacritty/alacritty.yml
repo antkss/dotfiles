@@ -66,4 +66,10 @@ colors:
     white:   '0xFFFAFA'
 selection:
   save_to_clipboard: true 
-
+cursor:
+  style:
+    shape: Block
+    blinking: On
+  vi_mode_style: Block
+  blink_interval: 750
+  unfocused_hollow: true

@@ -29,10 +29,10 @@ foreground = "0xcbe3e7"
 TERM = "xterm-256color"
 
 [font]
-size = 8
+size = 9
 
 [font.normal]
-family = "Hack"
+family = "Terminus (TTF)"
 style = "Bold"
 
 [selection]
@@ -44,9 +44,18 @@ dynamic_title = true
 opacity = 0.8
 
 [window.dimensions]
-columns = 180
-lines = 180
+columns = 100
+lines = 50
 
 [window.padding]
 x = 0
 y = 0
+[cursor]
+blink_interval = 200
+unfocused_hollow = true
+vi_mode_style = "Block"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+   
