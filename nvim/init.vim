@@ -70,7 +70,6 @@ nnoremap q: q <CR>
 set number
 
 
-
 " Search a hightlighted text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " nmap /\ :noh<CR>
@@ -117,7 +116,9 @@ nmap <S-i> <Plug>VimspectorStepInto
 nmap <S-n> <Plug>VimspectorStepOver
 nnoremap <S-e> :call vimspector#Reset( { 'interactive': v:false } )<CR>
 nmap <C-s> :w<CR>
-
+noremap <S-f> :execute "tab h " . expand("<cword>")<cr>
+map <S-k> <PageUp>
+map <S-j> <PageDown>
 " Set the basic sizes
 
 " let g:vimspector_code_minwidth = 90
