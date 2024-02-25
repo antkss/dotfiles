@@ -38,12 +38,13 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 " Plug 'mfussenegger/nvim-dap'
 " Plug 'puremourning/vimspector'
-
+"
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`. call plug#end()
 " set background=dark
 syntax on
 colorscheme onedark  
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "colorscheme tokyonight-storm
 "let g:lightline = {
 "  \ 'colorscheme': 'onedark',
@@ -65,7 +66,9 @@ inoremap <silent><expr> <Tab>
 nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap \ :Files<CR>
+nnoremap q: q <CR>
 set number
+
 
 
 " Search a hightlighted text
@@ -73,10 +76,20 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " nmap /\ :noh<CR>
 " map the alt key to the esc key
 inoremap <C-c> <Esc>
+inoremap <C-e> <Tab>
 "airline configuration
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1                       " Enable font for status bar
+let g:airline_theme='onedark'                           " Theme OneDark
 
+let g:airline#extensions#tabline#enabled = 1            " Enable Tab bar
+let g:airline#extensions#tabline#left_sep = ' '         " Enable Tab seperator 
+let g:airline#extensions#tabline#left_alt_sep = '|'     " Enable Tab seperator
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#fnamemod = ':t'        " Set Tab name as file name
+
+let g:airline#extensions#whitespace#enabled = 0         " Remove warning whitespace"
+
+let g:airline_section_error=''
 " NERDTree hightlight configuration
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
@@ -103,11 +116,16 @@ nmap <S-o> <Plug>VimspectorStepOut
 nmap <S-i> <Plug>VimspectorStepInto
 nmap <S-n> <Plug>VimspectorStepOver
 nnoremap <S-e> :call vimspector#Reset( { 'interactive': v:false } )<CR>
+nmap <C-s> :w<CR>
+
 " Set the basic sizes
 
 " let g:vimspector_code_minwidth = 90
 " let g:vimspector_code_height = 90
-" let g:vimspector_terminal_maxwidth = 40
-" let g:vimspector_terminal_minwidth = 0
-
+" let g:vimspector_terminal_width = 0
+" let g:vimspector_terminal_width = 0
+let g:vimspector_sidebar_width = 40
+let g:vimspector_bottombar_height = 0
+let g:vimspector_terminal_maxwidth = 60
+let g:vimspector_terminal_minwidth = 60
 
