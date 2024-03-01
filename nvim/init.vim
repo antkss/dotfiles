@@ -127,14 +127,12 @@ vnoremap  x  "+x
 nnoremap  x  "+x
 vnoremap  X  "+X
 nnoremap  X  "+X
-nnoremap  dd  "+dd
 
 
 " " Paste from clipboard
 nnoremap p "+p
-nnoremap P "+P
 vnoremap p "+p
-vnoremap P "+P
+vnoremap P "p
 " map <S-k> <PageUp>
 " map <S-j> <PageDown>
 " Set the basic sizes
