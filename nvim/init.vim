@@ -122,6 +122,13 @@ vnoremap  y  "+y
 nnoremap  Y  "+yg_
 nnoremap  y  "+y
 nnoremap  yy  "+yy
+" " Cut to clipboard
+vnoremap  x  "+x
+nnoremap  x  "+x
+vnoremap  X  "+X
+nnoremap  X  "+X
+nnoremap  dd  "+dd
+
 
 " " Paste from clipboard
 nnoremap p "+p
