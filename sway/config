@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term foot 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -42,11 +42,11 @@ exec wl-paste -n -t  text --watch clipman store --max-items=9999999999 --histpat
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-gaps inner 4
-gaps outer 0
+gaps inner 6
+gaps outer 6
 
 # Hide titlebar on windows:
-default_border pixel 3
+default_border pixel 2
 client.focused          #5C8286 #5C8286 #ffffff #2e9ef4   #8fbcbb
 
 
@@ -144,27 +144,27 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 #: Workspaces:
 #
     # Switch to workspace
-    # bindsym $mod+1 workspace number 1
-    # bindsym $mod+2 workspace number 2
-    # bindsym $mod+3 workspace number 3
-    # bindsym $mod+4 workspace number 4
-    # bindsym $mod+5 workspace number 5
-    # bindsym $mod+6 workspace number 6
-    # bindsym $mod+7 workspace number 7
-    # bindsym $mod+8 workspace number 8
-    # bindsym $mod+9 workspace number 9
-    # bindsym $mod+0 workspace number 10 
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10 
 
-bindsym $mod+1 exec $swaydir/scripts/workspacefade.sh 1
-bindsym $mod+2 exec $swaydir/scripts/workspacefade.sh 2
-bindsym $mod+3 exec $swaydir/scripts/workspacefade.sh 3
-bindsym $mod+4 exec $swaydir/scripts/workspacefade.sh 4
-bindsym $mod+5 exec $swaydir/scripts/workspacefade.sh 5
-bindsym $mod+6 exec $swaydir/scripts/workspacefade.sh 6
-bindsym $mod+7 exec $swaydir/scripts/workspacefade.sh 7
-bindsym $mod+8 exec $swaydir/scripts/workspacefade.sh 8
-bindsym $mod+9 exec $swaydir/scripts/workspacefade.sh 9
-bindsym $mod+0 exec $swaydir/scripts/workspacefade.sh 0
+# bindsym $mod+1 exec $swaydir/scripts/workspacefade.sh 1
+# bindsym $mod+2 exec $swaydir/scripts/workspacefade.sh 2
+# bindsym $mod+3 exec $swaydir/scripts/workspacefade.sh 3
+# bindsym $mod+4 exec $swaydir/scripts/workspacefade.sh 4
+# bindsym $mod+5 exec $swaydir/scripts/workspacefade.sh 5
+# bindsym $mod+6 exec $swaydir/scripts/workspacefade.sh 6
+# bindsym $mod+7 exec $swaydir/scripts/workspacefade.sh 7
+# bindsym $mod+8 exec $swaydir/scripts/workspacefade.sh 8
+# bindsym $mod+9 exec $swaydir/scripts/workspacefade.sh 9
+# bindsym $mod+0 exec $swaydir/scripts/workspacefade.sh 0
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -184,13 +184,13 @@ bindsym $mod+0 exec $swaydir/scripts/workspacefade.sh 0
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen

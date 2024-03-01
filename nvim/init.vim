@@ -73,9 +73,7 @@ set number
 " Search a hightlighted text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " nmap /\ :noh<CR>
-" map the alt key to the esc key
-inoremap <C-c> <Esc>
-inoremap <C-e> <Tab>
+
 "airline configuration
 let g:airline_powerline_fonts = 1                       " Enable font for status bar
 let g:airline_theme='onedark'                           " Theme OneDark
@@ -116,6 +114,20 @@ nmap <S-i> <Plug>VimspectorStepInto
 nmap <S-n> <Plug>VimspectorStepOver
 nnoremap <S-e> :call vimspector#Reset( { 'interactive': v:false } )<CR>
 nmap <C-s> :w<CR>
+" map the alt key to the esc key
+inoremap <C-c> <Esc>
+inoremap <C-e> <Tab>
+" " Copy to clipboard
+vnoremap  y  "+y
+nnoremap  Y  "+yg_
+nnoremap  y  "+y
+nnoremap  yy  "+yy
+
+" " Paste from clipboard
+nnoremap p "+p
+nnoremap P "+P
+vnoremap p "+p
+vnoremap P "+P
 " map <S-k> <PageUp>
 " map <S-j> <PageDown>
 " Set the basic sizes
