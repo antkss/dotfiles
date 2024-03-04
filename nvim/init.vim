@@ -31,6 +31,7 @@ Plug 'puremourning/vimspector'
 "comment plugin
 Plug 'numToStr/Comment.nvim'
 "chatgpt plugin 
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'MunifTanjim/nui.nvim'
 " Plug 'dpayne/CodeGPT.nvim'
@@ -42,6 +43,7 @@ call plug#end()
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`. call plug#end()
 " set background=dark
+let b:copilot_enabled = 0  
 syntax on
 colorscheme onedark  
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -132,7 +134,7 @@ nnoremap  X  "+X
 " " Paste from clipboard
 nnoremap p "+p
 vnoremap p "+p
-vnoremap P "p
+vnoremap P p
 " map <S-k> <PageUp>
 " map <S-j> <PageDown>
 " Set the basic sizes
