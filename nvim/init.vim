@@ -4,7 +4,6 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " nerdtree hightlight and icons
 
 Plug 'neovim/nvim-lsp' " nvim-lsp
-
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'ryanoasis/vim-devicons'
 " save and restore nerdtree state between sessions
