@@ -19,7 +19,7 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu /home/as/.bin/bin/rofilau
+set $menu rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-2.rasi
 exec mako
 exec notify-send "Welcome back!! " 
 #exec /lib/polkit-gnome/polkit-gnome-authentication-agent-1
