@@ -115,7 +115,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec /home/as/.bin/bin/rofipow
+    bindsym $mod+Shift+e exec ~/.config/rofi/powermenu/type-1/powermenu.sh
 #
 #: Moving around:
 #
